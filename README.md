@@ -34,7 +34,7 @@ Gemini LLM
 Answer + Source Citations
 ```
 ## 
-
+📸 Demo
 ![📸 Demo](RagLegal.png)
 
 ---
