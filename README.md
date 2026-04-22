@@ -33,27 +33,6 @@ Gemini LLM
    ↓
 Answer + Source Citations
 ```
-
----
-## 🧠 Architecture Diagram
-
-## 🧠 Architecture Diagram
-
-```mermaid
-flowchart TD
-    A[User Uploads PDF] --> B[PyPDFLoader]
-    B --> C[Text Chunking]
-    C --> D[Generate Embeddings]
-    D --> E[FAISS Vector Store]
-
-    F[User Query] --> G[Query Embedding]
-    G --> H[Similarity Search Top K]
-    H --> I[Relevant Chunks Retrieved]
-
-    E --> H
-    I --> J[Gemini LLM]
-    J --> K[Answer Generation]
-    K --> L[Response with Source Citations]
 ## 📸 Demo
 
 > Add your screenshot here
