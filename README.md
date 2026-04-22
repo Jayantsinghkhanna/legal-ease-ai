@@ -35,10 +35,8 @@ Answer + Source Citations
 ```
 ## 📸 Demo
 
-> Add your screenshot here
-
 ```
-assets/demo.png
+RagLegal.png
 ```
 
 ---
