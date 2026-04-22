@@ -35,7 +35,22 @@ Answer + Source Citations
 ```
 
 ---
+## 🧠 Architecture Diagram
 
+```mermaid
+flowchart TD
+    A[User Uploads PDF] --> B[PyPDFLoader]
+    B --> C[Text Chunking]
+    C --> D[Generate Embeddings]
+    D --> E[FAISS Vector Store]
+
+    F[User Query] --> G[Query Embedding]
+    G --> H[Similarity Search (Top-K)]
+    H --> I[Relevant Chunks Retrieved]
+
+    I --> J[Gemini LLM]
+    J --> K[Answer Generation]
+    K --> L[Response + Source Citations]
 ## ⚙️ Tech Stack
 
 | Category          | Tools Used                                  |
