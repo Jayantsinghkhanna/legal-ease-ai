@@ -35,7 +35,7 @@ Answer + Source Citations
 ```
 ## 📸 Demo
 
-RagLegal.png
+(RagLegal.png)
 
 ---
 
