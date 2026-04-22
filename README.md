@@ -37,6 +37,8 @@ Answer + Source Citations
 ---
 ## 🧠 Architecture Diagram
 
+## 🧠 Architecture Diagram
+
 ```mermaid
 flowchart TD
     A[User Uploads PDF] --> B[PyPDFLoader]
@@ -45,78 +47,13 @@ flowchart TD
     D --> E[FAISS Vector Store]
 
     F[User Query] --> G[Query Embedding]
-    G --> H[Similarity Search (Top-K)]
+    G --> H[Similarity Search Top K]
     H --> I[Relevant Chunks Retrieved]
 
+    E --> H
     I --> J[Gemini LLM]
     J --> K[Answer Generation]
-    K --> L[Response + Source Citations]
-## ⚙️ Tech Stack
-
-| Category          | Tools Used                                  |
-| ----------------- | ------------------------------------------- |
-| Language          | Python                                      |
-| Frontend          | Streamlit                                   |
-| LLM               | Google Gemini-Pro                           |
-| Framework         | LangChain                                   |
-| Vector Database   | FAISS (CPU)                                 |
-| Embeddings        | GoogleGenerativeAIEmbeddings                |
-| Document Handling | PyPDFLoader, RecursiveCharacterTextSplitter |
-
----
-
-## 🔬 How It Works
-
-### 1️⃣ Document Processing
-
-* Upload PDF
-* Extract text using **PyPDFLoader**
-* Split into chunks using **RecursiveCharacterTextSplitter**
-
-### 2️⃣ Chunking Strategy
-
-* Chunk Size: ~1000 characters
-* Overlap: 100 characters
-* Ensures **context continuity between paragraphs**
-
----
-
-### 3️⃣ Embedding Generation
-
-Each chunk is converted into a vector using:
-
-```
-GoogleGenerativeAIEmbeddings
-```
-
----
-
-### 4️⃣ Vector Storage
-
-* Stored in **FAISS** for fast similarity search
-* Enables efficient retrieval of relevant context
-
----
-
-### 5️⃣ Query Processing (RAG)
-
-When user asks a question:
-
-1. Convert query → embedding
-2. Retrieve Top-3 similar chunks
-3. Send to LLM with prompt
-4. Generate answer using **ONLY retrieved context**
-
----
-
-### 6️⃣ Hallucination Control
-
-* Strict prompt engineering
-* LLM restricted to provided context
-* Output includes **citations for verification**
-
----
-
+    K --> L[Response with Source Citations]
 ## 📸 Demo
 
 > Add your screenshot here
