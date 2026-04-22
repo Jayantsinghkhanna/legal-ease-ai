@@ -1,0 +1,19 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Environment variables
+.env
+
+# Streamlit
+.streamlit/
+
+# FAISS / data
+data/
+*.faiss
+*.pkl
+
+# OS files
+.DS_Store
+Thumbs.db
